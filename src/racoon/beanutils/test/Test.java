@@ -7,9 +7,6 @@ import java.util.List;
 import java.util.Map;
 
 import racoon.beanutils.YXBeanUtils;
-import racoon.beanutils.YXConverterUtils;
-import racoon.beanutils.converters.GenericConverter;
-import racoon.beanutils.test.beans.G;
 import racoon.beanutils.test.beans.RpcStudent;
 import racoon.beanutils.test.beans.RpcTeacher;
 import racoon.beanutils.test.beans.Student;
