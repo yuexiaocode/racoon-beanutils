@@ -23,6 +23,8 @@ import racoon.beanutils.converters.SqlTimestampConverter;
 public @SuppressWarnings("rawtypes")
 class YXConvertUtilsBean extends ConvertUtilsBean implements Converter{
 	
+	
+	
 	Map<String,ConvertFromTo> convertFromToes = new HashMap<String,ConvertFromTo>();
 	
 	public YXConvertUtilsBean() {
@@ -35,9 +37,9 @@ class YXConvertUtilsBean extends ConvertUtilsBean implements Converter{
         register(java.sql.Date.class, throwException ? new SqlDateConverter() : new SqlDateConverter(null));
         register(java.sql.Time.class, throwException ? new SqlTimeConverter() : new SqlTimeConverter(null));
         register(Timestamp.class, throwException ? new SqlTimestampConverter() : new SqlTimestampConverter(null));
-        register(List.class,new ListConverter());
-        register(Set.class,new SetConverter());
-        register(Map.class,new HashMapConverter());
+        register(List.class,new ListConverter(this));
+        register(Set.class,new SetConverter(this));
+        register(Map.class,new HashMapConverter(this));
 	
 	}
 	

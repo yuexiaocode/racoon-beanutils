@@ -4,20 +4,7 @@ import java.util.List;
 
 
 public class RpcTeacher {
-	private int id;
-	private long birthday;
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public long getBirthday() {
-		return birthday;
-	}
-	public void setBirthday(long birthday) {
-		this.birthday = birthday;
-	}
+
 	
 	public List<RpcStudent> students;
 	public List<RpcStudent> getStudents() {
@@ -27,5 +14,12 @@ public class RpcTeacher {
 		this.students = students;
 	}
 	
+	private RpcStudent student;
+	public RpcStudent getStudent() {
+		return student;
+	}
+	public void setStudent(RpcStudent student) {
+		this.student = student;
+	}
 	
 }

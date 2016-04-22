@@ -1,13 +1,12 @@
 package racoon.beanutils.test.beans;
 
 import java.util.List;
-import java.util.Map;
 
 public class RpcStudent {
+	
 	private int id;
 	
-	private List<RpcTeacher> teachers;
-
+	
 	public int getId() {
 		return id;
 	}
@@ -15,6 +14,9 @@ public class RpcStudent {
 	public void setId(int id) {
 		this.id = id;
 	}
+	private RpcTeacher teacher;
+	
+	private List<RpcTeacher> teachers;
 
 	public List<RpcTeacher> getTeachers() {
 		return teachers;
@@ -23,16 +25,15 @@ public class RpcStudent {
 	public void setTeachers(List<RpcTeacher> teachers) {
 		this.teachers = teachers;
 	}
+
+	public RpcTeacher getTeacher() {
+		return teacher;
+	}
+	public void setTeacher(RpcTeacher teacher) {
+		this.teacher = teacher;
+	}
+
 	
-	private Map<String,String> map;
-
-	public Map<String, String> getMap() {
-		return map;
-	}
-
-	public void setMap(Map<String, String> map) {
-		this.map = map;
-	}
 	
 	
 }

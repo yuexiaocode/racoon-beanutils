@@ -2,9 +2,7 @@ package racoon.beanutils.test;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import racoon.beanutils.YXBeanUtils;
 import racoon.beanutils.test.beans.RpcStudent;
@@ -17,18 +15,27 @@ public class Test {
 	public static void main(String[] args) throws IllegalAccessException, InvocationTargetException, SecurityException, NoSuchFieldException {
 		
 		RpcStudent rpcStudent = new RpcStudent();
-		Map<String,String> map = new HashMap<String,String>();
-		map.put("tttt", "tt");
-		
-		rpcStudent.setMap(map);
-		
-		
 		RpcTeacher rpcTeacher = new RpcTeacher();
-		rpcTeacher.setBirthday(System.currentTimeMillis());
+		
+		rpcStudent.setTeacher(rpcTeacher);
+		
+		rpcTeacher.setStudent(rpcStudent);
+		
+		List<RpcStudent> students = new ArrayList<RpcStudent>();
+		students.add(rpcStudent);
+		rpcTeacher.setStudents(students);
+		
+		
+		
+		Student student = new Student();
+		
+		
+		
+		/*RpcTeacher rpcTeacher = new RpcTeacher();
 		List<RpcTeacher> rpcTeachers = new ArrayList<RpcTeacher>();
 		
 		List<RpcStudent> students = new ArrayList<RpcStudent>();
-		students.add(new RpcStudent());
+		students.add(rpcStudent);
 		
 		rpcTeacher.setStudents(students);
 		
@@ -36,7 +43,7 @@ public class Test {
 		rpcStudent.setTeachers(rpcTeachers);
 		
 		Student student = new Student();
-		rpcStudent.setTeachers(rpcTeachers);
+		rpcStudent.setTeachers(rpcTeachers);*/
 		
 		
 		
@@ -45,7 +52,8 @@ public class Test {
 		//Map<String,Class<?>> convertMap = new HashMap<String, Class<?>>();
 		//convertMap.put("t", List.class);
 		YXBeanUtils.copyProperties(student,rpcStudent);
-	
+		YXBeanUtils.copyProperties(student,rpcStudent);
+		System.out.println(student.getTeacher().getStudent().getTeacher()==student.getTeacher());
 		//Date d= student.getTeachers().get(0).getBirthday();
 		//System.out.println(d);
 		

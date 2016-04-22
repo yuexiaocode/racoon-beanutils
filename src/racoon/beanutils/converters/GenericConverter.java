@@ -10,5 +10,5 @@ public abstract class GenericConverter implements Converter{
 		return this.convert(type, null, value);
 	}
 	
-	public abstract <T> T convert(Class<T> type,Class<?> genericType,Object value);
+	public abstract <T> T convert(Class<T> type,Class<?>[] genericType,Object value);
 }
